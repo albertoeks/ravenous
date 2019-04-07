@@ -23,6 +23,7 @@ var business = {
 class App extends React.Component {
 
   searchYelp(term, location, sortBy){
+    console.log('test')
     return 'Searching Yelp with' + term +  ', ' + location +  ', ' + sortBy;
   }
 
