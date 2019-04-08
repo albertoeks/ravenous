@@ -1,6 +1,5 @@
 import React from 'react';
 import './SearchBar.css';
-import { threadId } from 'worker_threads';
 
 const sortByOptions = {
   'Best Match': 'best_match',
@@ -29,7 +28,7 @@ class SearchBar extends React.Component{
       let sortByOptionValue = sortByOptions[sortByOption];
       return  <li 
                 key={sortByOptionValue} 
-                onClick={this.handleSortByChange.bind(this,sortByOptionValue)}
+                onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
                 className={this.getSortByClass(sortByOptionValue)}>
                  {sortByOption}
               </li>
