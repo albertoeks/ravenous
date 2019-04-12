@@ -8,5 +8,28 @@ search(term, location, sortBy){
           Authorization: `Bearer ${apiKey}`} 
         }).then(response => {
             return response.json();
+          }).then(response =>{
+              if(response.ok){
+                  return response.json();
+              }
+          }).then(jsonResponse => {
+              if(jsonResponse.businesses){
+                  return jsonResponse.businesses.map(business => {
+                      return {
+                          id: business.id,
+                          imageSrc: business.imageSrc,
+                          name: business.name,
+                          address: business.location.address,
+                          city: business.location.city,
+                          state: business.location.state,
+                          zipCode: business.location.zipCode,
+                          category: business.categories.title,
+                          rating: business.rating,
+                          reviewCount: business.reviewCount
+                      }
+                  });
+              }
           });
 }
+
+export default Yelp;
