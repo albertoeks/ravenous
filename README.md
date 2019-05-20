@@ -1,7 +1,5 @@
 # Project Ravenous
 
-Project developed as part of Codecademy's course.
-
 ### About
 
 This project provides a simple website called "Ravenous", a Yelp-like clone.
